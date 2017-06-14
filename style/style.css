@@ -1,0 +1,4 @@
+.googlemap:first-of-type, .googlemap:first-of-type > div {
+  height: 200px;
+  width: 250px;
+}

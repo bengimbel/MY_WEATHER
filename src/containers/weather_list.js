@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import bindActionCreators from 'redux';
+import GoogleMap from '../components/google_maps';
 
 class WeatherList extends Component {
   renderWeather(cityData){
     const cityName = cityData.name;
-    const temp = cityData.main.temp;
-    const minTemp = cityData.main.temp_min;
-    const maxTemp = cityData.main.temp_max;
+    const temp = cityData.main.temp * 9/5 - 459.67;
+    const minTemp = cityData.main.temp_min * 9/5 - 459.67;
+    const maxTemp = cityData.main.temp_max * 9/5 - 459.67;
     const status = cityData.weather.map(weather => weather.main);
     const description = cityData.weather.map(weather => weather.description);
     const id = cityData.weather.map(weather => weather.id);
@@ -16,8 +17,10 @@ class WeatherList extends Component {
 
   return(
     <div>
+    <div className='googlemap'><GoogleMap lon={lon} lat={lat} /></div>
       <div>
         <h1>{cityName}</h1>
+
       </div>
       <div>
         <h3>{minTemp}</h3>

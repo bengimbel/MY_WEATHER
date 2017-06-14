@@ -1,4 +1,12 @@
-.googlemap:first-of-type, .googlemap:first-of-type > div {
+td:first-of-type, td:first-of-type > div {
+  height: 300px;
+  width: 550px;
+}
+/*.googlemap{
   height: 200px;
   width: 250px;
 }
+.googlemap > div{
+  height: 200px;
+  width: 250px;
+}*/
